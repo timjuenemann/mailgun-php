@@ -244,7 +244,7 @@ class RestClient
         case 200:
             $data = (string) $responseObj->getBody();
             $jsonResponseData = json_decode($data, false);
-            $result = new \stdClass();
+            $result = [];
             // return response data as json if possible, raw if not
             $result->http_response_body = $data && null === $jsonResponseData ? $data : $jsonResponseData;
             $result->http_response_code = $httpResponseCode;
